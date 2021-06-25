@@ -1,0 +1,149 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --Violet: hsl(257, 40%, 49%);
+  --Soft-Magenta: hsl(300, 69%, 71%);
+}
+
+body {
+  font-family: 'Open Sans', sans-serif;
+  background: var(--Violet);
+}
+
+main {
+  color: #fff;
+  min-height: 100vh;
+  width: 90%;
+  padding: 40px;
+  .bg-mobile {
+    position: absolute;
+    left: 90px;
+    top: 0;
+    z-index: -1;
+  }
+  .bg-desktop {
+    display: none;
+  }
+  .logo {
+    position: relative;
+    left: 90px;
+    top: -5px;
+    width: 130px;
+    margin-bottom: 30px;
+  }
+  .content {
+    img {
+      width: 300px;
+      position: relative;
+      left: 90px;
+      top: 15px;
+    }
+    .content-info {
+      position: relative;
+      left: 60px;
+      width: 90%;
+      text-align: center;
+      padding: 30px;
+      margin-top: 50px;
+      h2 {
+        font-size: 1.5rem;
+        margin-bottom: 1.5rem;
+        font-family: 'Poppins', sans-serif;
+      }
+      p {
+        font-size: 0.89rem;
+        line-height: 1.5;
+        font-weight: normal;
+        margin-bottom: 45px;
+      }
+      .register {
+        display: flex;
+        justify-content: center;
+        a {
+          text-decoration: none;
+          color: var(--Soft-Magenta);
+          background: #fff;
+          padding: 10px;
+          display: block;
+          width: 200px;
+          border-radius: 50px;
+
+          &:hover {
+            background: var(--Soft-Magenta);
+            color: white;
+          }
+        }
+      }
+    }
+  }
+  footer {
+    display: flex;
+    justify-content: center;
+    position: relative;
+    left: 45px;
+    a {
+      border: 1px solid #fff;
+      border-radius: 50%;
+      padding: 10px;
+      margin: 30px 5px 10px;
+      color: #fff;
+    }
+  }
+}
+
+@media only screen and (min-width: 1024px) {
+  main {
+    .bg-mobile {
+      display: none;
+    }
+    .bg-desktop {
+      display: block;
+      position: absolute;
+      top: -40px;
+      left: -40px;
+    }
+    header {
+      .logo {
+        position: relative;
+        left: -12px;
+      }
+    }
+    .content {
+      display: flex;
+      img {
+        width: 700px;
+        margin-top: 40px;
+        position: relative;
+        left: -12px;
+        top: -1px;
+      }
+      .content-info {
+        text-align: left;
+        .register {
+          display: flex;
+          justify-content: left;
+          text-align: center;
+          a {
+            box-shadow: 5px 5px 10px #000;
+          }
+        }
+        h2 {
+          font-size: 2.3rem;
+        }
+      }
+    }
+    footer {
+      display: flex;
+      justify-content: flex-end;
+      position: relative;
+      left: -2px;
+    }
+  }
+}
